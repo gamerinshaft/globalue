@@ -1,0 +1,67 @@
+/* デフォルト */
+@media screen and (min-width: 0px){
+  .navbar.navbar-default.global-nav{min-height: 0px;}
+  .nav-container.table.box-center{ width: 100%; margin-bottom:0px;}
+  .nav-container > .nav-item{color: white; border: solid 1px #ccc; font-size: 18px;}
+}
+/* 479px以下用（スマートフォン用）の記述 */
+@media screen and (min-width: 479px) {
+
+}
+/*600px以上用(スモールタブレット用)の記述*/
+@media screen and (min-width: 599px) {
+  .navbar.navbar-default.global-nav{display: none;}
+  .test{
+    color: blue;
+  }
+  .about{background-color: #5e0e0e; width: 100%; height: 200px;}
+  .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 170px;}
+
+}
+/* 767px以上用（タブレット／スマートフォン用）の記述 */
+@media screen and (min-width: 767px) {
+  .test{
+    color: blue;
+  }
+  .about{background-color: #5e0e0e; width: 100%; height: 210px;}
+  .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 180px;}
+
+}
+/* 980px以上用（PC用）の記述 */
+@media screen and (min-width: 979px) {
+  .test{
+    color: red;
+  }
+  .about{background-color: #5e0e0e; width: 100%; height: 230px;}
+  .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 200px;}
+}
+/* 1300px以上用（TV用）の記述 */
+@media screen and (min-width: 1299px){
+  .test{
+    color: green;
+  }
+  .about{background-color: #5e0e0e; width: 100%; height: 280px;}
+  .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 250px;}
+}
+
+
+body,html{height: 100%;}
+body{max-width: 100%;}
+.apply{top:5%; right:5%; width: 19%; z-index:5;}
+.apply:hover{opacity:0.7;}
+.catch1-1{top: 5%;left: 10%;position: absolute;font-family: serif; z-index:1; color:white; width: 90%;}
+.catch1-2{top: 17%;left: 17%;position: absolute;font-family: serif; color: white; z-index: 1; width: 83%;}
+.catch2-1{top: 5%;left: 34%;position: absolute;font-family: serif; z-index:1; color:white; width: 66%;}
+.catch2-2{top: 17%;left: 47%;position: absolute;font-family: serif; color: white; z-index: 1; width: 53%;}
+.supporter{top: 53%; left: 44%; color: #aaa; z-index: 2; font-weight: bold; rgba(111, 104, 104, 0.83); width: 56%;}
+.supporters_b{top: 76%; left: 37%;position: absolute; width: 11%;}
+.supporters_r{top: 60%; left: 44%;position: absolute; width: 11%;}
+.supporters_g{top: 60%; left: 29%;position: absolute; width: 11%;}
+.supporters_s{top: 76%; left: 52%;position: absolute; width: 11%;}
+.supporters_c{top: 60%; left: 59%;position: absolute; width: 11%;}
+.navbar.navbar-default{background-color: #5e0e0e; border-color: #520808;}
+.navbar-brand, .navbar-nav > li > a{color: linen !important;}
+.carousel-control{z-index:4;}
+.carousel-caption{max-width: 100%;}
+img.img-bg{min-width: 100%;}
+ol.carousel-indicators{margin-bottom:0; bottom: 3%;}
