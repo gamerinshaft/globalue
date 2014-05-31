@@ -20,7 +20,7 @@
 	}
 	;
 </script>
-<form method="post" action="">
+<form method="post" action="send.php">
 
 	<p>氏名<br>
 		<input type="text" name="shimei"></p>
