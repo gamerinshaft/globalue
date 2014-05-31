@@ -9,7 +9,8 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 	$email = filter_input(INPUT_POST, 'email');
 	$sns = filter_input(INPUT_POST, 'sns');
 	$suisen = filter_input(INPUT_POST, 'suisen');
+
+	// 以下2つのどちらかはnull
 	$suisenbun = filter_input(INPUT_POST, 'suisenbun');
 	$jisseki = filter_input(INPUT_POST, 'jisseki');
-	
 }

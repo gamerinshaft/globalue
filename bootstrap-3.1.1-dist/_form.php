@@ -2,16 +2,23 @@
 	function onChange(Obj) {
 		index_nub = Obj.selectedIndex; // 選択された項目番号を取得する
 		O_value = Obj.options[Obj.selectedIndex].value; // 選択された項目の値を取得する
+
+		$("#textarea").remove();
+		var appends = '';
 		if (O_value === "jisen") {
-			// 自薦が選択されたなら自己推薦文を表示して活動実績を隠す
-			document.getElementById("textarea_jisen").style.display = "block";
-			document.getElementById("textarea_tasen").style.display = "none";
+			appends += '<div id="textarea">';
+			appends += '<p>自己推薦文<br>';
+			appends += '<textarea name="suisenbun" cols="50" rows="10"></textarea>';
+			appends += '</div>';
 		} else {
-			// 他薦が選択されたなら自己推薦文を隠して活動実績を表示する
-			document.getElementById("textarea_jisen").style.display = "none";
-			document.getElementById("textarea_tasen").style.display = "block";
+			appends += '<div id="textarea">';
+			appends += '<p>活動実績<br>';
+			appends += '<textarea name="jisseki" cols="50" rows="10"></textarea>';
+			appends += '</div>';
 		}
-	};
+		$("#textarea_wrapper").append(appends);
+	}
+	;
 </script>
 <form method="post" action="">
 
@@ -39,13 +46,10 @@
 			<option value="tasen">他薦</option>
 		</select></p>
 
-	<div id="textarea_jisen">
-		<p>自己推薦文<br>
-			<textarea name="suisenbun" cols="50" rows="10"></textarea>
-	</div>
-	<div id="textarea_tasen" style="display: none;">
-		<p>活動実績<br>
-			<textarea name="jisseki" cols="50" rows="10"></textarea>
+	<div id="textarea_wrapper">
+		<div id="textarea">
+			<p>自己推薦文<br><textarea name="suisenbun" cols="50" rows="10"></textarea>
+		</div>
 	</div>
 	<p><input type="submit" value="送信する"></p>
 	<div></div>
