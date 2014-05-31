@@ -21,16 +21,16 @@ if (!$result1) {
 	die('INSERTクエリーが失敗しました1。' . mysql_error());
 }
 
-echo '自薦者一覧\n';
+echo '自薦者一覧<br>';
 while ($row = mysql_fetch_assoc($result1)) {
 	print($row['id'] . ' : ');
-	print($row['shimei'].'\n');
-	print($row['shozoku'].'\n');
-	print($row['gakunen'].'\n');
-	print($row['tel'].'\n');
-	print($row['email'].'\n');
-	print($row['suisenbun'].'\n');
-	print('\n');
+	print($row['shimei'].'<br>');
+	print($row['shozoku'].'<br>');
+	print($row['gakunen'].'<br>');
+	print($row['tel'].'<br>');
+	print($row['email'].'<br>');
+	print($row['suisenbun'].'<br>');
+	print('<br><br>');
 }
 
 $sql2 = 'SELECT id, shimei, shozoku, gakunen, tel, email, jisseki from tbl_tasen';
@@ -40,16 +40,16 @@ if (!$result2) {
 	die('INSERTクエリーが失敗しました2。' . mysql_error());
 }
 
-echo '他薦者一覧\n';
+echo '他薦者一覧<br>';
 while ($row = mysql_fetch_assoc($result2)) {
 	print($row['id'] . ' : ');
-	print($row['shimei'].'\n');
-	print($row['shozoku'].'\n');
-	print($row['gakunen'].'\n');
-	print($row['tel'].'\n');
-	print($row['email'].'\n');
-	print($row['jisseki'].'\n');
-	print('\n');
+	print($row['shimei'].'<br>');
+	print($row['shozoku'].'<br>');
+	print($row['gakunen'].'<br>');
+	print($row['tel'].'<br>');
+	print($row['email'].'<br>');
+	print($row['jisseki'].'<br>');
+	print('<br><br>');
 }
 
 mysql_close($link);
