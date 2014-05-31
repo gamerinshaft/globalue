@@ -68,3 +68,7 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 
 	mysql_close($link);
 }
+
+// 一時的に飛ばす。
+header('Location: data.php', true, 303);
+exit();
