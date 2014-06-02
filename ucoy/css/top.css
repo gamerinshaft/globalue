@@ -48,7 +48,7 @@
 
 
 body,html{height: 100%;}
-body{max-width: 100%; background-color: white;}
+body{max-width: 100%; background: url('../img/old_map_@2X.png');}
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
 .apply:hover{opacity:0.7;}
 .catch1-1{top: 5%;left: 10%;position: absolute;font-family: serif; z-index:1; color:white; width: 90%;}
