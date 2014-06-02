@@ -16,7 +16,7 @@
   .test{
     color: blue;
   }
-  .about{background-color: #5e0e0e; width: 100%; height: 200px;}
+  .about{background-color: #5e0e0e; width: 100%; height: 200px; margin-top: 10px; border-radius: 5px;}
   .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 170px;}
 
 }
@@ -49,8 +49,10 @@
 
 body,html{height: 100%;}
 body{max-width: 100%; background: url('../img/old_map_@2X.png');}
+.header{height: 120px;}
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
 .apply:hover{opacity:0.7;}
+#carousel{border: solid 15px #5e0e0e; border-radius: 5px;}
 .catch1-1{top: 5%;left: 10%;position: absolute;font-family: serif; z-index:1; color:white; width: 90%;}
 .catch1-2{top: 17%;left: 17%;position: absolute;font-family: serif; color: white; z-index: 1; width: 83%;}
 .catch2-1{top: 5%;left: 34%;position: absolute;font-family: serif; z-index:1; color:white; width: 66%;}
