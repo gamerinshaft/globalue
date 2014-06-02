@@ -49,7 +49,6 @@
 
 body,html{height: 100%;}
 body{max-width: 100%; }
-.header{padding: 43px;}
 .content1{background-color: rgba(0,0,0,0.06);}
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
 .apply:hover{opacity:0.7;}
@@ -64,7 +63,7 @@ body{max-width: 100%; }
 .supporters_g{top: 60%; left: 29%;position: absolute; width: 11%;}
 .supporters_s{top: 76%; left: 52%;position: absolute; width: 11%;}
 .supporters_c{top: 60%; left: 59%;position: absolute; width: 11%;}
-.navbar.navbar-default{background-color: #5e0e0e; border-color: #520808;}
+.navbar.navbar-default.header{background-color: #5e0e0e; border-color: #520808; background-image: url('../img/header-bg.gif');padding: 43px;　}
 .navbar-brand, .navbar-nav > li > a{color: linen !important;}
 .carousel-control{z-index:4;}
 .carousel-caption{max-width: 100%;}
