@@ -64,7 +64,8 @@ body{max-width: 100%; }
 .supporters_s{top: 76%; left: 52%;position: absolute; width: 11%;}
 .supporters_c{top: 60%; left: 59%;position: absolute; width: 11%;}
 .navbar.navbar-default.header{background-color: #5e0e0e; border-color: #520808; background-image: url('../img/header-bg4.gif');padding: 43px;　}
-.navbar-brand, .navbar-nav > li > a{color: #BDBABA !important;font-size: 35px;font-weight: bold;text-shadow: 1px 1px 5px #290606;font-family: serif;}
+.navbar-brand{font-weight: bold;text-shadow: 1px 1px 5px #290606;}
+.navbar-brand, .navbar-nav > li > a{color: white!important;font-family: serif; font-size: 35px; }
 .carousel-control{z-index:4;}
 .carousel-caption{max-width: 100%;}
 img.img-bg{min-width: 100%;}
