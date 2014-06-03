@@ -3,7 +3,7 @@
 	Their style definitions are initialize.
 ------------------------------------------------- */
 
-body , div , dl , dt , dd , ul , ol , li , h1 , h2 , h3 , h4 , h5 , h6 , pre , form , fieldset , input , textarea , p , blockquote , th , td { 
+body , div , dl , dt , dd , ul , ol , li , h1 , h2 , h3 , h4 , h5 , h6 , pre , form , fieldset , input , textarea , p , blockquote , th , td {
 	margin: 0;
 	padding: 0;
 }
@@ -12,12 +12,12 @@ body {
 	color: #666;
 	font-size: 16px;
 	font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ","Meiryo","ＭＳ Ｐゴシック", "sans-serif";
-	line-height: 160%;
+	/*line-height: 160%;*/
 	text-align: left;
-	
+
 	/* iOS4,5対策だけどさすがにもう必要ないかも */
 	letter-spacing: -0.001em;
-	
+
 	/* 文字サイズ自動調整機能キャンセル */
 	-webkit-text-size-adjust: 100%;
 }
@@ -27,7 +27,7 @@ table {
 	border-spacing: 0;
 }
 
-img { 
+img {
 	border: 0;
 	max-width: 100%;
 	height: auto;

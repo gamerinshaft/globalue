@@ -46,10 +46,14 @@
   .about_box{background-color: white; width:100%; margin-top: 15px; margin-bottom: 15px; height: 250px;}
 }
 
-
+/*content1*/
+.content1{background-color: rgba(0,0,0,0.06);font-family: serif; padding: 35px 0px;}
+.content1__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
+.content1__content{font-size: 20px;}
+/*other*/
 body,html{height: 100%;}
-body{max-width: 100%; }
-.content1{background-color: rgba(0,0,0,0.06);}
+body{max-width: 100%;background-image: url('../img/seamlesstexture30_500.jpg'); }
+
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
 .apply:hover{opacity:0.7;}
 #carousel{}
