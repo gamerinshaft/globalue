@@ -47,7 +47,7 @@
 }
 
 /*content1*/
-.content1{background-color: rgba(0,0,0,0.06);font-family: serif; padding: 35px 0px;}
+.content1{background-color: rgba(15,5,100,1);font-family: serif; padding: 35px 0px; color: white;}
 .content1__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
 .content1__content{font-size: 20px;}
 /*content2*/
