@@ -1,8 +1,11 @@
 /* デフォルト */
 @media screen and (min-width: 0px){
-  .navbar.navbar-default.global-nav{min-height: 0px;}
-  .nav-container.table.box-center{ width: 100%; margin-bottom:0px;}
-  .nav-container > .nav-item{color: white; border: solid 1px #ccc; font-size: 18px;}
+  .navbar.navbar-brand.header{padding: 0px;}
+  a.navbar-brand{font-size: 12px;}
+  .navbar.navbar-default.global-nav{min-height: 0px;border:none;}
+  .nav-container.table.box-center{ width: 100%; margin-bottom:0px;background-color: #5e0e0e;border: solid 1px #520808;}
+  .nav-container > .nav-item{color: white; border-right: solid 1px #ccc; font-size: 18px;}
+  body > nav.navbar.navbar-default.radius0.margin0.global-nav > div > span:nth-child(4){border-right: 0px;}
   #top-navbar > ul > li > a.img-link{padding: 10px 5px;}
   #top-navbar > ul > li > a > img.img-link__item{max-width: 30px; max-height: 30px;}
   .about{display:none;}
@@ -12,8 +15,7 @@
 
 }
 /*600px以上用(スモールタブレット用)の記述*/
-@media screen and (min-width: 599px) {
-  .navbar.navbar-default.global-nav{display: none;}
+@media screen and (min-width: 639px) {
   .test{
     color: blue;
   }
@@ -23,7 +25,10 @@
 }
 /* 767px以上用（タブレット／スマートフォン用）の記述 */
 @media screen and (min-width: 767px) {
+  .navbar.navbar-default.global-nav{display: none;}
+  a.navbar-brand{font-size: 35px;}
   .about{display:block;}
+  .navbar.navbar-default.header{padding: 43px; font-size: 16px;}
   .test{
     color: blue;
   }
@@ -94,7 +99,7 @@ body{max-width: 100%;background-image: url('../img/seamlesstexture30_500.jpg'); 
 .supporters_g{top: 60%; left: 29%;position: absolute; width: 11%;}
 .supporters_s{top: 76%; left: 52%;position: absolute; width: 11%;}
 .supporters_c{top: 60%; left: 59%;position: absolute; width: 11%;}
-.navbar.navbar-default.header{background-color: #5e0e0e; border-color: #520808; background-image: url('../img/header-bg4.gif');padding: 43px;　}
+.navbar.navbar-default.header{background-color: #5e0e0e; border-color: #520808; background-image: url('../img/header-bg4.gif');　}
 .navbar-brand{font-weight: bold;text-shadow: 1px 1px 5px #290606;}
 .navbar-brand, .navbar-nav > li > a{color: white!important;font-family: serif; font-size: 35px; }
 .carousel-control{z-index:4;}
