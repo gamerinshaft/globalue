@@ -9,7 +9,7 @@
   #top-navbar > ul > li > a.img-link{padding: 10px 5px;}
   #top-navbar > ul > li > a > img.img-link__item{max-width: 30px; max-height: 30px;}
   .about{display:none;}
-  #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: 80%;}
+  #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: 50%;}
 }
 /* 479px以下用（スマートフォン用）の記述 */
 @media screen and (min-width: 479px) {
