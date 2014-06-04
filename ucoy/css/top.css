@@ -5,6 +5,7 @@
   .nav-container > .nav-item{color: white; border: solid 1px #ccc; font-size: 18px;}
   #top-navbar > ul > li > a.img-link{padding: 10px 5px;}
   #top-navbar > ul > li > a > img.img-link__item{max-width: 30px; max-height: 30px;}
+  .about{display:none;}
 }
 /* 479px以下用（スマートフォン用）の記述 */
 @media screen and (min-width: 479px) {
@@ -22,6 +23,7 @@
 }
 /* 767px以上用（タブレット／スマートフォン用）の記述 */
 @media screen and (min-width: 767px) {
+  .about{display:block;}
   .test{
     color: blue;
   }
