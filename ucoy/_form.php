@@ -9,14 +9,14 @@
 			appends += '<div id="textarea">';
 			appends += '<label for="pr" class="col-lg-2 control-label margin7-top">自己推薦文</label>';
 			appends += '<div class="col-lg-10">'
-			appends += '<textarea id="pr" name="suisenbun" class="form-control"></textarea>';
+			appends += '<textarea id="pr" name="suisenbun" class="form-control" style="height: 200px;"></textarea>';
 			appends += '</div>';
 			appends += '</div>';
 		} else {
 			appends += '<div id="textarea">';
 			appends += '<label for="pr" class="col-lg-2 control-label margin7-top">活動実績</label>';
 			appends += '<div class="col-lg-10">'
-			appends += '<textarea id="pr" name="jisseki" class="form-control"></textarea>';
+			appends += '<textarea id="pr" name="jisseki" class="form-control" style="height: 200px;"></textarea>';
 			appends += '</div>';
 			appends += '</div>';
 		}
