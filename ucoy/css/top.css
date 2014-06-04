@@ -9,7 +9,7 @@
   #top-navbar > ul > li > a.img-link{padding: 10px 5px;}
   #top-navbar > ul > li > a > img.img-link__item{max-width: 30px; max-height: 30px;}
   .about{display:none;}
-  #carousel > div > div.carousel-inner.relative.max-h > div.item.active > img{height: 400px;}
+  #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: 80%;}
 }
 /* 479px以下用（スマートフォン用）の記述 */
 @media screen and (min-width: 479px) {
@@ -26,6 +26,7 @@
 }
 /* 767px以上用（タブレット／スマートフォン用）の記述 */
 @media screen and (min-width: 767px) {
+  #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: auto;}
   .navbar.navbar-default.global-nav{display: none;}
   a.navbar-brand{font-size: 35px;}
   .about{display:block;}
