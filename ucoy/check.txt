@@ -3,7 +3,7 @@
 980px未満は width : 100%;
 
 PC : 769px ~ 980px (最大値)
-tablet : 641px ~ 768px 
+tablet : 641px ~ 768px
 smartphone : 640px以下
 
 
