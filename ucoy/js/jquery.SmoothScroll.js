@@ -87,30 +87,25 @@
 	};
 })(jQuery);
 
-function animateBackButton() {
-	hideBackButton();
-	setTimeout(function() {
-		showBackButton();
-	}, 1000);
-}
-
-function showBackButton() {
-	$(function() {
-		$('#back').animate({opacity: '1.0'}, {duration: 400});
-	});
-}
-
-function hideBackButton() {
-	$(function() {
-		$('#back').animate({opacity: '0.00001'}, {duration: 400});
-	});
-}
-
 jQuery(function($) {
 	$(window).on('load', function() {
 		$('a[href^="#"]').SmoothScroll({
 			duration: 1000,
 			easing: 'easeOutQuint'
+		});
+	});
+
+	$(function() {
+		$(window).scroll(function() {
+			var s = $(this).scrollTop();
+			var m = 1200;
+			if (s > m) {
+				//alert(s);
+				$("#back").fadeIn('slow');
+			} else if (s < m) {
+				//alert(s);
+				$("#back").fadeOut('slow');
+			}
 		});
 	});
 
