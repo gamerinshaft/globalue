@@ -84,7 +84,7 @@
 			<div id="textarea">
 				<label for="pr" class="col-lg-2 control-label margin7-top">自己推薦文</label>
 				<div class="col-lg-10">
-					<textarea id="pr" name="suisenbun" class="form-control"></textarea>
+					<textarea id="pr" name="suisenbun" class="form-control" style="height: 200px;"></textarea>
 				</div>
 			</div>
 		</div>
