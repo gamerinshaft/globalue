@@ -111,11 +111,11 @@ ol.carousel-indicators > li, ol.carousel-indicators > li.active{width:20px; heig
 }
 /* 769px~980px用（PC用）の記述 */
 @media screen and (min-width: 769px) {
+  #carousel{height: auto;}
   .item{height: 630px;}
   .img-bg1{height: 100%; min-width: 100%; background-image: url("../img/carousel1-2.jpg");}
   .img-bg2{height: 100%; min-width: 100%; background-image: url("../img/carousel2-2.jpg");}
   .img-bg3{height: 100%; min-width: 100%; background-image: url("../img/carousel3-2.jpg");}
-  #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: auto;}
   .navbar.navbar-default.global-nav{display: none;}
   a.navbar-brand{font-size: 35px;}
   .about{display:block;}
