@@ -1,5 +1,6 @@
-
-
+body{max-width: 100%;background-image: url('../img/seamlesstexture30_500.jpg'); background-size: repeat;}
+body,html{height: 100%;}
+.navbar.navbar-brand.header{padding: 0px;}
 /*content1*/
 .content1{background-image: url('../img/bar-bg.gif');box-shadow: 0px 3px 20px black;font-family: serif; padding: 35px 0px; color: white;}
 .content1__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
@@ -30,8 +31,6 @@
 .content8{background-image: url('../img/bar-bg.gif');box-shadow: 0px 3px 20px black;font-family: serif; padding: 35px 0px; color: white;}
 .content8__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
 /*other*/
-body,html{height: 100%;}
-body{max-width: 100%;background-image: url('../img/seamlesstexture30_500.jpg'); background-size: repeat;}
 
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
 .apply:hover{opacity:0.7;}
@@ -51,13 +50,18 @@ body{max-width: 100%;background-image: url('../img/seamlesstexture30_500.jpg'); 
 .navbar-brand, .navbar-nav > li > a{color: white!important;font-family: serif; font-size: 35px; }
 .carousel-control{z-index:4;}
 .carousel-caption{max-width: 100%;}
-img.img-bg{min-width: 100%;}
 ol.carousel-indicators{margin-bottom:0; bottom: 3%;}
+ol.carousel-indicators > li, ol.carousel-indicators > li.active{width:20px; height: 20px;}
 
 
 /* デフォルト */
 @media screen and (min-width: 0px){
-  .navbar.navbar-brand.header{padding: 0px;}
+  .navbar{min-height: 15%;}
+  #carousel{height: 85%;}
+  .item{height: 100%;}
+  .img-bg1{height: 100%; min-width: 100%; background-image: url("../img/carousel1_sp.jpg"); background-size: cover;}
+  .img-bg2{height: 100%; min-width: 100%; background-image: url("../img/carousel2_sp.jpg"); background-size: cover;}
+  .img-bg3{height: 100%; min-width: 100%; background-image: url("../img/carousel3_sp.jpg"); background-size: cover;}
   a.navbar-brand{font-size: 12px;}
   .navbar.navbar-default.global-nav{min-height: 0px;border:none;}
   .nav-container.table.box-center{ width: 100%; margin-bottom:0px;background-color: #5e0e0e;border: solid 1px #520808;}
@@ -93,7 +97,8 @@ ol.carousel-indicators{margin-bottom:0; bottom: 3%;}
 
 /* 480px~768用(タブレット用)の記述*/
 @media screen and (min-width: 481px) {
-      .navbar.navbar-default.global-nav{display: none;}
+  .emphasize{font-size: 24px; font-weight: bold; }
+  .navbar.navbar-default.global-nav{display: none;}
   a.navbar-brand{font-size: 18px;}
   .navbar.navbar-default.header{padding: 16px; font-size: 16px;}
   .about{background-color: #5e0e0e; width: 100%; height: 200px; background-image: url("../img/header-bg4.gif");}
@@ -106,6 +111,10 @@ ol.carousel-indicators{margin-bottom:0; bottom: 3%;}
 }
 /* 769px~980px用（PC用）の記述 */
 @media screen and (min-width: 769px) {
+  .item{height: 630px;}
+  .img-bg1{height: 100%; min-width: 100%; background-image: url("../img/carousel1-2.jpg");}
+  .img-bg2{height: 100%; min-width: 100%; background-image: url("../img/carousel2-2.jpg");}
+  .img-bg3{height: 100%; min-width: 100%; background-image: url("../img/carousel3-2.jpg");}
   #carousel > div > div.carousel-inner.relative.max-h > div.item > img{height: auto;}
   .navbar.navbar-default.global-nav{display: none;}
   a.navbar-brand{font-size: 35px;}
