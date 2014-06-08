@@ -116,8 +116,8 @@ $append_tasen = <<< EOF
 EOF;
 
 // javascript用に改行削除
-$jisen = str_replace(array("\r\n","\r","\n"), '', $append_jisen);
-$tasen = str_replace(array("\r\n","\r","\n"), '', $append_tasen);
+$jisen = str_replace(array("\r\n", "\r", "\n"), '', $append_jisen);
+$tasen = str_replace(array("\r\n", "\r", "\n"), '', $append_tasen);
 
 
 // javascript
@@ -137,10 +137,10 @@ EOF;
 ?>
 
 <script type="text/javascript">
-	<?php echo $js; ?>
+<?php echo $js; ?>
 </script>
 
-<form class="form-horiontal" method="post" action="send.php" role="form">
+<form class="form-horiontal" method="post" action="send.php" role="form" onsubmit="return check()">
 	<div class="form-group row ">
 		<label for="offer" class="col-lg-2 control-label margin7-top">自薦・他薦</label>
 		<div class="col-lg-10">
@@ -206,10 +206,12 @@ EOF;
 			</div>
 		</div>
 	</div>
+
 	<div class="row">
 		<div class="col-lg-9"></div>
 		<div class="col-lg-3">
-			<input type="submit" class="btn btn-primary form-control" value="送信する">
-			<div>
-			</div>
-			</form>
+			<input type="checkbox" name="agreement" onclick="this.form.btn.disabled = !this.form.btn.disabled" id="agreement">
+			<label for="agreement">利用規約に同意する</label>
+			<input type="submit" name="btn" class="btn btn-primary form-control" value="送信する" disabled>
+		</div>
+</form>
