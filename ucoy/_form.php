@@ -5,7 +5,13 @@ $append_jisen = <<< EOF
 			<div class="form-group row margin15-top">
 				<label for="name" class="col-lg-2 control-label margin7-top">氏名</label>
 				<div class="col-lg-10">
-					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田太郎">
+					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田 太郎">
+				</div>
+			</div>
+			<div class="form-group row margin15-top">
+				<label for="hurigana" class="col-lg-2 control-label margin7-top">フリガナ</label>
+				<div class="col-lg-10">
+					<input type="text" name="hurigana" class="form-control" id="hurigana" placeholder="ヤマダ タロウ">
 				</div>
 			</div>
 			<div class="form-group row ">
@@ -48,9 +54,11 @@ $append_jisen = <<< EOF
 			<div class="form-group row ">
 				<label for="pr" class="col-lg-2 control-label margin7-top">一言コメント</label>
 				<div class="col-lg-10">
-					<textarea id="pr" name="suisenbun" class="form-control" style="height: 60px;"></textarea>
+					<textarea id="pr" name="comment" class="form-control" style="height: 60px;"></textarea>
 				</div>
 			</div>
+			<input type="hidden" name="date" value="<?php echo date(\'Y/m/d A H:i:s\'); ?>">
+			<input type="hidden" name="type" value="jisen">
 		</div>
 EOF;
 
@@ -60,19 +68,25 @@ $append_tasen = <<< EOF
 			<div class="form-group row margin15-top">
 				<label for="name" class="col-lg-2 control-label margin7-top">あなたの氏名</label>
 				<div class="col-lg-10">
-					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田太郎">
+					<input type="text" name="your_shimei" class="form-control" id="name" placeholder="山田 太郎">
+				</div>
+			</div>
+			<div class="form-group row margin15-top">
+				<label for="name" class="col-lg-2 control-label margin7-top">フリガナ</label>
+				<div class="col-lg-10">
+					<input type="text" name="your_hurigana" class="form-control" id="hurigana" placeholder="ヤマダ タロウ">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="belong" class="col-lg-2 control-label margin7-top">あなたの大学/学部/学科</label>
 				<div class="col-lg-10">
-					<input type="text" name="shozoku" class="form-control" id="belong" placeholder="学生大学/理工学部/情報科学科">
+					<input type="text" name="your_shozoku" class="form-control" id="belong" placeholder="学生大学/理工学部/情報科学科">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="grade" class="col-lg-2 control-label margin7-top">あなたの学年</label>
 				<div class="col-lg-10">
-					<select name="gakunen" class="form-control" id="grade">
+					<select name="your_gakunen" class="form-control" id="grade">
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -85,33 +99,41 @@ $append_tasen = <<< EOF
 			<div class="form-group row ">
 				<label for="phone" class="col-lg-2 control-label margin7-top">あなたの連絡先(TEL)</label>
 				<div class="col-lg-10">
-					<input type="tel" name="tel" class="form-control" id="phone" maxlength="15" placeholder="090-0000-0000">
+					<input type="tel" name="your_tel" class="form-control" id="phone" maxlength="15" placeholder="090-0000-0000">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="mail" class="col-lg-2 control-label margin7-top">あなたの連絡先(EMAIL)</label>
 				<div class="col-lg-10">
-					<input type="email" name="email" class="form-control" id="mail" placeholder="example@domain.com">
+					<input type="email" name="your_email" class="form-control" id="mail" placeholder="example@domain.com">
 				</div>
 			</div>
 			<div class="form-group row margin0-bottom">
 				<label for="social" class="col-lg-2 control-label margin7-top">あなたのSNSアカウント(facebook等)</label>
 				<div class="col-lg-10">
-					<input type="text" name="sns" class="form-control" id="social" placeholder="facebook: http://facebook.com/myname, twitter: http://twitter.com/aoucnt_id, etc">
+					<input type="text" name="your_sns" class="form-control" id="social" placeholder="facebook: http://facebook.com/myname, twitter: http://twitter.com/aoucnt_id, etc">
 				</div>
 			</div>
 			<div class="form-group row margin25-top">
 				<label for="name" class="col-lg-2 control-label margin7-top">被推薦者の氏名</label>
 				<div class="col-lg-10">
-					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田太郎">
+					<input type="text" name="suisen_shimei" class="form-control" id="name" placeholder="山田太郎">
+				</div>
+			</div>
+			<div class="form-group row margin15-top">
+				<label for="name" class="col-lg-2 control-label margin7-top">フリガナ</label>
+				<div class="col-lg-10">
+					<input type="text" name="suisen_hurigana" class="form-control" id="suisen_hurigana" placeholder="タナカ イチロウ">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="pr" class="col-lg-2 control-label margin7-top">推薦理由</label>
 				<div class="col-lg-10">
-					<textarea id="pr" name="suisenbun" class="form-control" style="height: 60px;"></textarea>
+					<textarea id="pr" name="reason" class="form-control" style="height: 60px;"></textarea>
 				</div>
 			</div>
+			<input type="hidden" name="date" value="<?php echo date(\'Y/m/d A H:i:s\'); ?>">
+			<input type="hidden" name="type" value="tasen">
 		</div>
 EOF;
 
@@ -140,7 +162,7 @@ EOF;
 <?php echo $js; ?>
 </script>
 
-<form class="form-horiontal" method="post" action="send.php" role="form" onsubmit="return check()">
+<form class="form-horiontal" method="post" action="send.php" role="form">
 	<div class="form-group row ">
 		<label for="offer" class="col-lg-2 control-label margin7-top">自薦・他薦</label>
 		<div class="col-lg-10">
@@ -155,7 +177,13 @@ EOF;
 			<div class="form-group row margin15-top">
 				<label for="name" class="col-lg-2 control-label margin7-top">氏名</label>
 				<div class="col-lg-10">
-					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田太郎">
+					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田 太郎">
+				</div>
+			</div>
+			<div class="form-group row margin15-top">
+				<label for="hurigana" class="col-lg-2 control-label margin7-top">フリガナ</label>
+				<div class="col-lg-10">
+					<input type="text" name="hurigana" class="form-control" id="hurigana" placeholder="ヤマダ タロウ">
 				</div>
 			</div>
 			<div class="form-group row ">
@@ -201,10 +229,12 @@ EOF;
 
 				<label for="pr" class="col-lg-2 control-label margin7-top">一言コメント</label>
 				<div class="col-lg-10">
-					<textarea id="pr" name="suisenbun" class="form-control" style="height: 60px;"></textarea>
+					<textarea id="pr" name="comment" class="form-control" style="height: 60px;"></textarea>
 				</div>
 			</div>
 		</div>
+		<input type="hidden" name="date" value="<?php echo date('Y/m/d A H:i:s'); ?>">
+		<input type="hidden" name="type" value="jisen">
 	</div>
 
 	<div class="row">
