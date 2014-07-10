@@ -3,17 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>大学生 of The year</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/initialize.css" rel="stylesheet">
     <link href="css/top.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.fittext.js"></script>
-
-
+    <script src="js/jquery.SmoothScroll.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default radius0 margin0 header" role="navigation">
@@ -25,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">大学生 OF THE YEAR</a>
+          <a class="navbar-brand" href="#"><font class="test">大学生 OF THE YEAR</font></a>
         </div>
         <div class="collapse navbar-collapse" id="top-navbar">
           <ul class="nav navbar-nav navbar-right">
@@ -53,68 +52,71 @@
         <li data-target="#carousel" data-slide-to="1"></li>
         <li data-target="#carousel" data-slide-to="2"></li>
       </ol>
-      <div class="carousel-wrapper relative">
+      <div class="carousel-wrapper relative max-h">
         <!-- Wrapper for slides -->
         <div class="carousel-inner relative max-h">
           <div class="item active">
-            <img src="img/carousel1-2.jpg" alt="..." class="img-bg">
+            <!-- <img src="img/carousel1-2.jpg" alt="..." class="img-bg"> -->
+            <div class="img-bg1"></div>
             <div class="carousel-caption max-h"></div>
             <script src="js/jquery.fittext.js"></script>
           </div>
           <div class="item ">
-            <img src="img/carousel2-2.jpg" alt="..." class="img-bg">
+            <!-- <img src="img/carousel2-2.jpg" alt="..." class="img-bg"> -->
+            <div class="img-bg2"></div>
             <div class="carousel-caption max-h"></div>
           </div>
           <div class="item">
-            <img src="img/carousel3-2.jpg" alt="..." class="img-bg">
+            <!-- <img src="img/carousel3-2.jpg" alt="..." class="img-bg"> -->
+            <div class="img-bg3"></div>
             <div class="carousel-caption">
             </div>
           </div>
         </div>
         <!-- <div class="absolute top0 left0 max-h max-w opacity4 bg-black"></div> -->
-        <img class="absolute apply" src="img/omousikomi_4.png" alt="...">
-        <div class="supporter absolute max-h family-serif">協賛企業様一覧 </div>
+        <a href="#contact"><img class="absolute apply" src="img/omousikomi_4.png" alt="..."></a>
+        <!-- <div class="supporter absolute max-h family-serif">協賛企業様一覧 </div>
         <img class="absolute supporters_b" src="img/backlog.png" alt="...">
         <img class="absolute supporters_c" src="img/crowdworks.png" alt="...">
         <img class="absolute supporters_g" src="img/google.png" alt="...">
         <img class="absolute supporters_r" src="img/rakuten.png" alt="...">
-        <img class="absolute supporters_s" src="img/socialgamefactory.png" alt="...">
+        <img class="absolute supporters_s" src="img/socialgamefactory.png" alt="..."> -->
       </div>
       <!-- Controls -->
-      <a class="left carousel-control" href="#carousel" data-slide="prev">
+      <!-- <a class="left carousel-control" href="#carousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
       <a class="right carousel-control" href="#carousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
+      </a> -->
     </div>
-    <nav class="navbar navbar-default radius0 margin0 global-nav" role="navigation">
+    <!-- <nav class="navbar navbar-default radius0 margin0 global-nav" role="navigation">
       <div class="nav-container table box-center">
         <span class="nav-item table-cell middle center margin0">大学生 OF THE YEAR　とは</span>
         <span class="nav-item table-cell middle center margin0">募集要項</span>
         <span class="nav-item table-cell middle center margin0">歴代受賞者紹介</span>
         <span class="nav-item table-cell middle center margin0">表彰者特典</span>
       </div>
-    </nav>
-    <div class="tab">
+    </nav> -->
+    <div class="tab" id="top">
       <div class="about">
         <div id="wrap" class="container">
-          <div class="col-lg-3 max-h ">
-            <img class="about_box thumbnail" src="img/daigakusei_1.png">
+          <div class="col-lg-3 max-h">
+            <a href="#about"><img class="about_box thumbnail" src="img/daigakusei_1.png"></a>
           </div>
           <div class="col-lg-3 max-h">
-            <img class="about_box thumbnail" src="img/bosyuyoukou_1.png">
+            <a href="#introduce"><img class="about_box thumbnail" src="img/rekidai_1.png"></a>
           </div>
           <div class="col-lg-3 max-h">
-            <img class="about_box thumbnail" src="img/rekidai_1.png">
+            <a href="#privilege"><img class="about_box thumbnail" src="img/hyousyousya.png"></a>
           </div>
           <div class="col-lg-3 max-h">
-            <img class="about_box thumbnail" src="img/hyousyousya.png">
+            <a href="#contact"><img class="about_box thumbnail" src="img/bosyuyoukou_1.png"></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="content1">
+    <div class="content1" id="about">
       <div class="container center">
         <div class="row">
           <div class="col-lg-12">
@@ -140,48 +142,48 @@
           </div>
           <div class="content2__content col-lg-4">
             <img src="img2/daigakusei_5.png" style="opacity: 0.8;">
-             <div class="content2__content__title">感化される学生</div>
+			<div class="content2__content__title">感化される学生</div>
           </div>
           <div class="content2__content__content col-lg-12">
-            <span class="font-size-24 bold">
+            <span class="emphasize">
               学生の特権
             </span>
             、それは
-            <span class="font-size-24 bold">
-           「時間」
+            <span class="emphasize">
+			  「時間」
             </span>
             と
-            <span class="font-size-24 bold">
-            「失敗への許容」
+            <span class="emphasize">
+			  「失敗への許容」
             </span>
             だと考えます。
             <br>
             人生の中でも、
-            <span class="font-size-18">
-            これほど自分次第で濃淡が出る期間はありません。
+            <span class="emphasize">
+			  これほど自分次第で濃淡が出る期間はありません。
             </span>
             <br>
             そして、
-            <span class="font-size-24 bold">
-            「学生」
+            <span class="emphasize">
+			  「学生」
             </span>
             だからできること、
-            <span class="font-size-24 bold">
-            「学生」
+            <span class="emphasize">
+			  「学生」
             </span>
             だからこそできることというものがたくさんあります。
             <br>
-            <div class="font-size-30   bold padding25-ends">
+            <div class="font-size-30 bold padding25-ends">
               「既存の枠に捉われない、思い切ったチャレンジをしてほしい」
             </div>
             それが
-            <span class="font-size-24 bold">
-            私達の願い
+            <span class="emphasize">
+			  私達の願い
             </span>
             です。
             毎年、新たな価値を創造すべく
-            <span class="font-size-24 bold">
-            チャレンジした学生
+            <span class="emphasize">
+			  チャレンジした学生
             </span>
             に光を当てる機会を作る事で、
             <br>
@@ -204,40 +206,40 @@
             <img src="img2/hyousyousya_3.png" style="opacity: 0.8;">
             <div class="content3__content__title">「実績」を賞賛</div>
             <div class="content3__content__content">
-              gotyは、大学生がその年に評価した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
+              gotyは、大学生がその年に挑戦した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
             </div>
           </div>
           <div class="content3__content col-lg-3">
             <img src="img2/rekidai_3.png" style="opacity: 0.8;">
             <div class="content3__content__title">「チャレンジ」の評価</div>
             <div class="content3__content__content">
-              gotyは、大学生がその年に評価した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
+              gotyは、大学生がその年に挑戦した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
             </div>
           </div>
           <div class="content3__content col-lg-3">
             <img src="img2/hyousyousya_5.png" style="opacity: 0.8;">
             <div class="content3__content__title">「特別」な特典</div>
             <div class="content3__content__content">
-              gotyは、大学生がその年に評価した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
+              gotyは、大学生がその年に挑戦した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
             </div>
           </div>
           <div class="content3__content col-lg-3">
             <img src="img2/rekidai_1.png" style="opacity: 0.8;">
             <div class="content3__content__title">「他薦」ＯＫ</div>
             <div class="content3__content__content">
-              gotyは、大学生がその年に評価した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
+              gotyは、大学生がその年に挑戦した事に対して、賞賛する機会を儲けます。日本の学生が世界に羽ばたくのを、我々は応援します。
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="content4">
+    <div class="content4" id="introduce">
       <div class="container center">
         <div class="row">
           <div class="content4__title col-lg-12">
             歴代受賞者紹介
           </div>
-          <div class="content4__content">ビジネス部門、IT・エレクトロニクス部門、ノンプロフィット部門にて過去大会優秀な功績を収めた学生を紹介致します</div>
+          <div class="content4__content">ビジネス部門、IT・エレクトロニクス部門、ノンプロフィット部門にて過去大会優秀な功績を収めた学生を紹介いたします。</div>
         </div>
       </div>
     </div>
@@ -295,7 +297,7 @@
         </div>
       </div>
     </div>
-    <div class="content6">
+    <div class="content6"  id="privilege">
       <div class="container center">
         <div class="row">
           <div class="content6__title col-lg-12">
@@ -304,15 +306,12 @@
         </div>
       </div>
     </div>
-    <div class="content7">
+    <div class="content7 padding45-ends">
       <div class="container">
         <div class="row">
-          <div class="content7__title col-lg-12 center">
-            <div>表彰者特典</div>
-          </div>
-          <div class="content7__pr padding15-ends col-lg-12">
+          <div class="content7 padding15-ends col-lg-12">
             <div class="row">
-              <div class="col-lg-6 content7__pr__content margin15-ends">
+              <div class="col-lg-6 content7__content margin15-ends">
                 ほげ市ほげ男
                 ほんfsdjfdsらfjsだ；f
                 fs；fjsd;らfjdslfjds；fjさlfdさ
@@ -320,39 +319,7 @@
                 jふぁdls；fjさl；fjsdらfjさdlkfjdさlfjlさjfldkさjふぁlds
                 fjsだl；fじゃslfjsl
               </div>
-              <div class="col-lg-6 content7__pr__img">
-                <div class="about_box thumbnail"></div>
-                <div class="btn btn-primary max-w">動画を見る</div>
-              </div>
-            </div>
-          </div>
-          <div class="content7__pr padding15-ends col-lg-12">
-            <div class="row">
-              <div class="col-lg-6 content7__pr__img">
-                <div class="about_box thumbnail"></div>
-                <div class="btn btn-primary max-w">動画を見る</div>
-              </div>
-              <div class="col-lg-6 content7__pr__content margin15-ends">
-                ほげ市ほげ男
-                ほんfsdjfdsらfjsだ；f
-                fs；fjsd;らfjdslfjds；fjさlfdさ
-                fjさ；dfjさ；lfじゃsdl；f
-                jふぁdls；fjさl；fjsdらfjさdlkfjdさlfjlさjfldkさjふぁlds
-                fjsだl；fじゃslfjsl
-              </div>
-            </div>
-          </div>
-          <div class="content7__pr padding15-ends col-lg-12">
-            <div class="row">
-              <div class="col-lg-6 content7__pr__content margin15-ends">
-                ほげ市ほげ男
-                ほんfsdjfdsらfjsだ；f
-                fs；fjsd;らfjdslfjds；fjさlfdさ
-                fjさ；dfjさ；lfじゃsdl；f
-                jふぁdls；fjさl；fjsdらfjさdlkfjdさlfjlさjfldkさjふぁlds
-                fjsだl；fじゃslfjsl
-              </div>
-              <div class="col-lg-6 content7__pr__img">
+              <div class="col-lg-6 content7__img">
                 <div class="about_box thumbnail"></div>
                 <div class="btn btn-primary max-w">動画を見る</div>
               </div>
@@ -361,12 +328,43 @@
         </div>
       </div>
     </div>
-    <div><?php include_once '_form.php';?></div>
-
+	<div class="content8" id="contact">
+      <div class="container center">
+        <div class="row">
+          <div class="content8__title col-lg-12">
+            応募要項
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content9 padding45-ends">
+      <div class="container center well margin15-top">
+        <div><?php include_once '_form.php';?></div>
+      </div>
+    </div>
+	<a href="#top" id="back" style="
+	   display: none;
+	   position: fixed;
+	   bottom:0;
+	   right: 5%;
+	   opacity: 0.8;
+	   background: #47a447;
+	   width: 150px;
+	   padding:10px;
+	   color: white;
+	   border: 3px solid #398439;
+	   border-bottom: 0px;
+	   border-radius: 5px 5px 0px 0px;
+	   text-decoration: none;
+	   z-index: 100;">
+	  MENU ↑
+	</a>
     <script>
 	  $("#apply").fitText(2.5, {minFontSize: '10px', maxFontSize: '50px'});
 	  $(".supporter").fitText(3.5, {minFontSize: '12px', maxFontSize: '23px'});
     </script>
     <script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	</script>
   </body>
 </html>
