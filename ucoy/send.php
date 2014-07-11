@@ -16,7 +16,7 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 	// MySQLに接続
 	$link = mysql_connect('localhost:3307', 'admin', 'MinaMi0319');
 	if (!$link) {
-		die('MySQL接続エラー(南のローカルサーバー上でしか動かないよ ><;)' . mysql_error());
+		die('MySQL接続エラー' . mysql_error());
 	}
 
 	// DBに接続
@@ -29,45 +29,51 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 	mysql_set_charset('utf8');
 	$sql = "";
 
-	if (filter_input(INPUT_POST, 'type') == "jisen") {
+	if (filter_input(INPUT_POST, 'type') == "自薦") {
 		// POSTデータのインプット
-		$shimei = filter_input(INPUT_POST, 'shimei');
-		$hurigana = filter_input(INPUT_POST, 'hurigana');
-		$shozoku = filter_input(INPUT_POST, 'shozoku');
-		$gakunen = filter_input(INPUT_POST, 'gakunen');
+		$sei = filter_input(INPUT_POST, '姓');
+		$mei = filter_input(INPUT_POST, '名');
+		$huri_sei = filter_input(INPUT_POST, 'セイ');
+		$huri_mei = filter_input(INPUT_POST, 'メイ');
+		$shozoku = filter_input(INPUT_POST, '所属');
+		$gakunen = filter_input(INPUT_POST, '学年');
 		$tel = filter_input(INPUT_POST, 'tel');
 		$email = filter_input(INPUT_POST, 'email');
-		$sns = filter_input(INPUT_POST, 'sns');
-		$comment = filter_input(INPUT_POST, 'comment');
+		$sns = filter_input(INPUT_POST, 'SNS');
+		$bumon = filter_input(INPUT_POST, '部門');
+		$comment = filter_input(INPUT_POST, 'コメント');
 		$date = filter_input(INPUT_POST, 'date');
 
-		$sql = "INSERT INTO tbl_jisen (shimei, hurigana, shozoku, gakunen, tel, email, sns, comment, date)"
+		$sql = "INSERT INTO tbl_jisen (sei, mei, huri_sei, huri_mei, shozoku, gakunen, tel, email, sns, bumon, comment, date)"
 				. " VALUES ("
-				. htmlspecialchars(quote_smart($shimei)) . ","
-				. htmlspecialchars(quote_smart($hurigana)) . ","
+				. htmlspecialchars(quote_smart($sei)) . ","
+				. htmlspecialchars(quote_smart($mei)) . ","
+				. htmlspecialchars(quote_smart($huri_sei)) . ","
+				. htmlspecialchars(quote_smart($huri_mei)) . ","
 				. htmlspecialchars(quote_smart($shozoku)) . ","
 				. htmlspecialchars(quote_smart($gakunen)) . ","
 				. htmlspecialchars(quote_smart($tel)) . ","
 				. htmlspecialchars(quote_smart($email)) . ","
 				. htmlspecialchars(quote_smart($sns)) . ","
+				. htmlspecialchars(quote_smart($bumon)) . ","
 				. htmlspecialchars(quote_smart($comment)) . ","
 				. htmlspecialchars(quote_smart($date)) . ")";
 
 		$mailto = $email;
-		$subject = "ご応募ありがとうございます！(自己PR文提出〆切：10/31)";
+		$subject = "プレエントリーありがとうございます！(自己PR文提出〆切：10/31)";
 		$message = <<<EOM
 \n
-{$shimei}さん\n
+{$sei} {$mei}さん\n
 \n
 \n
-こんにちは。大学生oftheyear実行委員会です。\n
+こんにちは。大学生 OF THE YEAR 2014実行委員会です。\n
 \n
-この度は、大学生oftheyear2014に参加表明いただき、ありがとうございます。\n
+この度は、大学生 OF THE YEAR 2014へのプレエントリーありがとうございます。\n
 \n
-今回、既成概念や枠に捉われず、新たな価値創造を行おうとしている大学生が集結する場所を創り、
+今回、既成概念や枠に捉われず、新たな価値創造を行おうとしている大学生が集結する場所を創り、\n
 大学生の力を結集して社会にインパクトを与えたいという想いからイベントの開催に至りました。\n
 \n
-{$shimei}さんのご応募、とても嬉しく思います。\n
+{$sei}さんのご応募、とても嬉しく思います。\n
 \n
 つきましては、自己PR文の提出をお願いしたいと思っております。\n
 (自己PR文の提出をもって、正式エントリーとさせていただきます）\n
@@ -75,11 +81,11 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 以下の自己PR文提出フォームより提出をお願いします。\n
 \n
 \n
-＜自己PR文提出フォーム＞\n
+＜エントリーフォーム＞\n
 \n
 以下、提出フォームより、10月31日(金)12:00までに提出をお願いします。\n
 \n
-〜〜〜提出フォームURL挿入〜〜〜\n
+http://goo.gl/OvooBE \n
 \n
 \n
 \n
@@ -90,12 +96,11 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 ▽11月14日(金)中　　         　一次予選(書類選考)結果発表\n
 \n
 ▽11月15日(土)〜12月16日(火)   プロによるプレゼンテーション講座 (一次予選合格者対象)\n
-※日時が確定したら別途連絡します。\n
+	※日時が確定したら別途連絡します。\n
 \n
 ▽12月17日(水) 午前　　　　　  二次予選会(ピッチ形式)\n
 \n
 ▽12月17日(水) 午後            ファイナルプレゼンテーション\n
-\n
 \n
 \n
 \n
@@ -110,7 +115,7 @@ if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST') {
 \n
 EOM;
 
-		$from = "大学生oftheyear実行委員会<info@globalue.com>";
+		$from = "大学生 OF THE YEAR 2014実行委員会<d.oftheyear14@gmail.com>";
 
 		mb_language('ja');
 		mb_internal_encoding('utf-8');
@@ -122,29 +127,39 @@ EOM;
 		}
 	} else {
 		// POSTデータのインプット
-		$your_shimei = filter_input(INPUT_POST, 'your_shimei');
-		$your_hurigana = filter_input(INPUT_POST, 'your_hurigana');
-		$your_shozoku = filter_input(INPUT_POST, 'your_shozoku');
-		$your_gakunen = filter_input(INPUT_POST, 'your_gakunen');
-		$your_tel = filter_input(INPUT_POST, 'your_tel');
-		$your_email = filter_input(INPUT_POST, 'your_email');
-		$your_sns = filter_input(INPUT_POST, 'your_sns');
-		$suisen_shimei = filter_input(INPUT_POST, 'suisen_shimei');
-		$suisen_hurigana = filter_input(INPUT_POST, 'suisen_hurigana');
-		$reason = filter_input(INPUT_POST, 'reason');
+		$your_sei = filter_input(INPUT_POST, 'あなたの姓');
+		$your_mei = filter_input(INPUT_POST, 'あなたの名');
+		$your_huri_sei = filter_input(INPUT_POST, 'あなたのセイ');
+		$your_huri_mei = filter_input(INPUT_POST, 'あなたのメイ');
+		$your_shozoku = filter_input(INPUT_POST, 'あなたの所属');
+		$your_gakunen = filter_input(INPUT_POST, 'あなたの学年');
+		$your_tel = filter_input(INPUT_POST, 'あなたのTEL');
+		$your_email = filter_input(INPUT_POST, 'あなたのEMAIL');
+		$your_sns = filter_input(INPUT_POST, 'あなたのSNS');
+		$hi_sei = filter_input(INPUT_POST, '被推薦者の姓');
+		$hi_mei = filter_input(INPUT_POST, '被推薦者の名');
+		$hi_huri_sei = filter_input(INPUT_POST, '被推薦者のセイ');
+		$hi_huri_mei = filter_input(INPUT_POST, '被推薦者のメイ');
+		$bumon = filter_input(INPUT_POST, '部門');
+		$reason = filter_input(INPUT_POST, '推薦理由');
 		$date = filter_input(INPUT_POST, 'date');
 
-		$sql = "INSERT INTO tbl_tasen (your_shimei, your_hurigana, your_shozoku, your_gakunen, your_tel, your_email, your_sns, suisen_shimei, suisen_hurigana, reason ,date)"
+		$sql = "INSERT INTO tbl_tasen (your_sei, your_mei, your_huri_sei, your_huri_mei, your_shozoku, your_gakunen, your_tel, your_email, your_sns, hi_sei, hi_mei, hi_huri_sei, hi_huri_mei, bumon, reason ,date)"
 				. " VALUES ("
-				. htmlspecialchars(quote_smart($your_shimei)) . ","
-				. htmlspecialchars(quote_smart($your_hurigana)) . ","
+				. htmlspecialchars(quote_smart($your_sei)) . ","
+				. htmlspecialchars(quote_smart($your_mei)) . ","
+				. htmlspecialchars(quote_smart($your_huri_sei)) . ","
+				. htmlspecialchars(quote_smart($your_huri_mei)) . ","
 				. htmlspecialchars(quote_smart($your_shozoku)) . ","
 				. htmlspecialchars(quote_smart($your_gakunen)) . ","
 				. htmlspecialchars(quote_smart($your_tel)) . ","
 				. htmlspecialchars(quote_smart($your_email)) . ","
 				. htmlspecialchars(quote_smart($your_sns)) . ","
-				. htmlspecialchars(quote_smart($suisen_shimei)) . ","
-				. htmlspecialchars(quote_smart($suisen_hurigana)) . ","
+				. htmlspecialchars(quote_smart($hi_sei)) . ","
+				. htmlspecialchars(quote_smart($hi_mei)) . ","
+				. htmlspecialchars(quote_smart($hi_huri_sei)) . ","
+				. htmlspecialchars(quote_smart($hi_huri_mei)) . ","
+				. htmlspecialchars(quote_smart($bumon)) . ","
 				. htmlspecialchars(quote_smart($reason)) . ","
 				. htmlspecialchars(quote_smart($date)) . ")";
 
@@ -152,17 +167,17 @@ EOM;
 		$subject = "推薦ありがとうございます！(推薦文提出〆切：10/31)";
 		$message = <<<EOM
 \n
-{$shimei}さん\n
+{$sei} {$mei}さん\n
 \n
 \n
-こんにちは。大学生oftheyear実行委員会です。\n
+こんにちは。大学生 OF THE YEAR 2014実行委員会です。\n
 \n
-この度は、大学生oftheyear2014へのお知り合いの推薦をいただき、ありがとうございます。\n
+この度は、大学生 OF THE YEAR 2014へのお知り合いの推薦をいただき、ありがとうございます。\n
 \n
-今回、既成概念や枠に捉われず、新たな価値創造を行おうとしている大学生が集結する場所を創り、
+今回、既成概念や枠に捉われず、新たな価値創造を行おうとしている大学生が集結する場所を創り、\n
 大学生の力を結集して社会にインパクトを与えたいという想いからイベントの開催に至りました。\n
 \n
-{$shimei}さんのご推薦、とても嬉しく思います。\n
+{$sei}さんのご推薦、とても嬉しく思います。\n
 \n
 つきましては、推薦文の提出をお願いしたいと思っております。\n
 (推薦文の提出をもって、正式エントリーとさせていただきます）\n
@@ -177,7 +192,7 @@ EOM;
 \n
 以下、提出フォームより、10月31日(金)12:00までに提出をお願いします。\n
 \n
-〜〜〜提出フォームURL挿入〜〜〜\n
+http://goo.gl/gFgpXU \n
 \n
 \n
 \n
@@ -190,10 +205,10 @@ EOM;
 　　　　　　　　　　　　　　　　　 事前に応募している旨を伝えておいてください。\n
 \n
 ▽11月15日(土)〜12月16日(火)   プロによるプレゼンテーション講座 (一次予選合格者対象)\n
-※日時が確定したら別途連絡します。\n
-
+	※日時が確定したら別途連絡します。\n
+\n
 ▽12月17日(水) 午前　　　　　  二次予選会(ピッチ形式)\n
-
+\n
 ▽12月17日(水) 午後            ファイナルプレゼンテーション\n
 \n
 \n
@@ -209,7 +224,7 @@ EOM;
 \n
 EOM;
 
-		$from = "大学生oftheyear実行委員会<info@globalue.com>";
+		$from = "大学生 OF THE YEAR 2014実行委員会<d.oftheyear14@gmail.com>";
 
 		mb_language('ja');
 		mb_internal_encoding('utf-8');

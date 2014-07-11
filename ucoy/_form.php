@@ -166,8 +166,8 @@ EOF;
 	<div class="form-group row ">
 		<label for="offer" class="col-lg-2 control-label margin7-top">自薦・他薦</label>
 		<div class="col-lg-10">
-			<input type="radio" name="suisen" value="jisen" onclick="onChange(this)" checked> 自薦<br/>
-			<input type="radio" name="suisen" value="tasen" onclick="onChange(this)"> 他薦
+			<input type="radio" name="suisen" value="自薦" onclick="onChange(this)" checked> 自薦　
+			<input type="radio" name="suisen" value="他薦" onclick="onChange(this)"> 他薦
 		</div>
 	</div>
 
@@ -177,25 +177,28 @@ EOF;
 			<div class="form-group row margin15-top">
 				<label for="name" class="col-lg-2 control-label margin7-top">氏名</label>
 				<div class="col-lg-10">
-					<input type="text" name="shimei" class="form-control" id="name" placeholder="山田 太郎">
+					<input type="text" name="姓" class="form-control" id="name" placeholder="姓">
+
+					<input type="text" name="名" class="form-control" id="name" placeholder="名">
 				</div>
 			</div>
 			<div class="form-group row margin15-top">
 				<label for="hurigana" class="col-lg-2 control-label margin7-top">フリガナ</label>
 				<div class="col-lg-10">
-					<input type="text" name="hurigana" class="form-control" id="hurigana" placeholder="ヤマダ タロウ">
+					<input type="text" name="セイ" class="form-control" id="hurigana" placeholder="セイ">
+					<input type="text" name="メイ" class="form-control" id="hurigana" placeholder="メイ">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="belong" class="col-lg-2 control-label margin7-top">大学/学部/学科</label>
 				<div class="col-lg-10">
-					<input type="text" name="shozoku" class="form-control" id="belong" placeholder="学生大学/理工学部/情報科学科">
+					<input type="text" name="所属" class="form-control" id="belong" placeholder="学生大学/理工学部/情報科学科">
 				</div>
 			</div>
 			<div class="form-group row ">
 				<label for="grade" class="col-lg-2 control-label margin7-top">学年</label>
 				<div class="col-lg-10">
-					<select name="gakunen" class="form-control" id="grade">
+					<select name="学年" class="form-control" id="grade">
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -220,28 +223,34 @@ EOF;
 			<div class="form-group row margin0-bottom">
 				<label for="social" class="col-lg-2 control-label margin7-top">SNSアカウント(facebook等)</label>
 				<div class="col-lg-10">
-					<input type="text" name="sns" class="form-control" id="social" placeholder="facebook: http://facebook.com/myname, twitter: http://twitter.com/aoucnt_id, etc">
+					<input type="text" name="SNS" class="form-control" id="social" placeholder="facebook: http://facebook.com/myname, twitter: http://twitter.com/aoucnt_id, etc">
 				</div>
 			</div>
 
+			<div class="col-lg-10">
+				<label for="offer" class="col-lg-2 control-label margin7-top">応募部門</label>
+				<input type="radio" name="部門" value="ビジネス"> ビジネス部門<br/>
+				<input type="radio" name="部門" value="ICT"> ICT部門<br/>
+				<input type="radio" name="部門" value="エンターテイメント"> エンターテイメント部門<br/>
+				<input type="radio" name="部門" value="ノンプロフィット"> ノンプロフィット部門<br/>
+				
+			</div>
 			<div class="form-group row ">
-
-
 				<label for="pr" class="col-lg-2 control-label margin7-top">一言コメント</label>
 				<div class="col-lg-10">
-					<textarea id="pr" name="comment" class="form-control" style="height: 60px;"></textarea>
+					<textarea id="pr" name="コメント" class="form-control" style="height: 60px;"></textarea>
 				</div>
 			</div>
 		</div>
 		<input type="hidden" name="date" value="<?php echo date('Y/m/d A H:i:s'); ?>">
-		<input type="hidden" name="type" value="jisen">
+		<input type="hidden" name="type" value="自薦">
 	</div>
 
 	<div class="row">
 		<div class="col-lg-9"></div>
 		<div class="col-lg-3">
 			<input type="checkbox" name="agreement" onclick="this.form.btn.disabled = !this.form.btn.disabled" id="agreement">
-			<label for="agreement">利用規約に同意する</label>
-			<input type="submit" name="btn" class="btn btn-primary form-control" value="送信する" disabled>
+			<label for="agreement"><a>個人情報保護方針</a>に同意する</label>
+			<input type="submit" name="btn" class="btn btn-primary form-control" value="エントリーする" disabled>
 		</div>
 </form>
