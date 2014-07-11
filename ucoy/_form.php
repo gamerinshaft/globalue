@@ -250,7 +250,7 @@ EOF;
 		<div class="col-lg-9"></div>
 		<div class="col-lg-3">
 			<input type="checkbox" name="agreement" onclick="this.form.btn.disabled = !this.form.btn.disabled" id="agreement">
-			<label for="agreement"><a>個人情報保護方針</a>に同意する</label>
+			<label for="agreement"><a href="policy.php" target="_blank">個人情報保護方針</a>に同意する</label>
 			<input type="submit" name="btn" class="btn btn-primary form-control" value="エントリーする" disabled>
 		</div>
 </form>
