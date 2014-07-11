@@ -54,6 +54,9 @@ body,html{height: 100%;}
   font-size: 25px;
   margin-top: 10px;
 }
+/*content11*/
+.content11{background-image: url('../img/bar-bg.gif');box-shadow: 0px 3px 20px black;font-family: serif; padding: 35px 0px; color: white;}
+.content11__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
 /*other*/
 
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
