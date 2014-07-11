@@ -1306,6 +1306,11 @@
   padding-left: -20px !important;
   padding-right: -20px !important; }
 
+.padding65-side {
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
 .margin-20 {
   margin: -20px; }
 

@@ -32,7 +32,7 @@ body,html{height: 100%;}
 .content8{background-image: url('../img/bar-bg.gif');box-shadow: 0px 3px 20px black;font-family: serif; padding: 35px 0px; color: white;}
 .content8__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
 /*content10*/
-.content10{font-family: serif; padding: 35px 0px;background-color: rgba(0,0,0,0.06);}
+.content10{font-family: serif; padding: 35px 0px;}
 .content10__title{
   font-size: 30px;
   text-shadow: -1px -1px 0px rgb(40, 40, 40);
@@ -57,6 +57,9 @@ body,html{height: 100%;}
 /*content11*/
 .content11{background-image: url('../img/bar-bg.gif');box-shadow: 0px 3px 20px black;font-family: serif; padding: 35px 0px; color: white;}
 .content11__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
+/*content12*/
+.content12{padding: 35px 0px;background-color: rgba(0,0,0,0.06);}
+.content12__title{font-size: 50px; text-shadow: -1px -1px 0px rgb(40, 40, 40);}
 /*other*/
 
 .apply{top:7%; right:5%; width: 17%; z-index:15;}
